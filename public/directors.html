@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Manage Directors — VoteGuard</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+<div id="sidebar"></div>
+<div id="topbar"></div>
+
+<main class="app-main">
+  <div class="row g-4">
+    <div class="col-lg-4">
+      <div class="card-vg p-4 fade-in">
+        <div class="card-header-vg"><i class="bi bi-person-plus"></i>Add Director</div>
+        <p class="text-muted-sm">Creates the account, issues an X.509 certificate, and emails login instructions. No password or certificate is shown here.</p>
+        <label class="form-label small fw-semibold">Username</label>
+        <input type="text" class="form-control mb-3" id="newUsername">
+        <label class="form-label small fw-semibold">Email</label>
+        <input type="email" class="form-control mb-3" id="newEmail">
+        <button class="btn btn-vg-primary w-100 rounded-3" onclick="addDirector()"><i class="bi bi-plus-lg me-1"></i>Create Director</button>
+        <div id="alertBox" class="alert d-none mt-3"></div>
+      </div>
+    </div>
+
+    <div class="col-lg-8">
+      <div class="card-vg p-4 fade-in">
+        <div class="card-header-vg"><i class="bi bi-people"></i>Directors</div>
+        <div class="table-responsive">
+          <table class="table table-vg align-middle">
+            <thead><tr><th>Username</th><th>Email</th><th>Certificate</th><th>Status</th><th>Voted</th><th></th></tr></thead>
+            <tbody id="directorsTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- Profile modal -->
+<div class="modal fade" id="profileModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h6 class="modal-title fw-bold">Director Profile</h6>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body" id="profileModalBody"></div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/js/common.js"></script>
+<script>
+requireRoleOrRedirect('election_official');
+renderAppShell('Manage Directors');
+
+let directorsCache = [];
+
+async function load() {
+  directorsCache = await apiFetch('/admin/directors');
+  document.getElementById('directorsTableBody').innerHTML = directorsCache.map(d => {
+    const statusPill = d.disabled
+      ? '<span class="pill bad"><i class="bi bi-slash-circle"></i> Disabled</span>'
+      : d.mustChangePassword
+        ? '<span class="pill warn"><i class="bi bi-hourglass"></i> Pending First Login</span>'
+        : '<span class="pill ok"><i class="bi bi-check-circle"></i> Active</span>';
+    return `
+    <tr>
+      <td class="fw-semibold">${escapeHtml(d.username)}</td>
+      <td>${escapeHtml(d.email)}</td>
+      <td><code>${d.certSerial}</code> ${d.certRevoked ? '<span class="pill bad ms-1">Revoked</span>' : ''}</td>
+      <td>${statusPill}</td>
+      <td>${d.hasVoted ? '<span class="pill ok">Voted</span>' : '<span class="pill neutral">Not yet</span>'}</td>
+      <td class="text-nowrap">
+        <div class="dropdown">
+          <button class="btn btn-sm btn-outline-secondary rounded-3" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="#" onclick="viewProfile('${d.username}');return false;"><i class="bi bi-person-circle me-2"></i>View Profile</a></li>
+            <li><a class="dropdown-item" href="#" onclick="resetPassword('${d.username}');return false;"><i class="bi bi-key me-2"></i>Reset Password</a></li>
+            <li><a class="dropdown-item" href="#" onclick="renewCert('${d.username}');return false;"><i class="bi bi-arrow-repeat me-2"></i>Renew Certificate</a></li>
+            <li><a class="dropdown-item text-danger" href="#" onclick="revokeCert('${d.certSerial}');return false;"><i class="bi bi-x-circle me-2"></i>Revoke Certificate</a></li>
+            <li><hr class="dropdown-divider"></li>
+            ${d.disabled
+              ? `<li><a class="dropdown-item text-success" href="#" onclick="toggleDisable('${d.username}', false);return false;"><i class="bi bi-check-circle me-2"></i>Enable Account</a></li>`
+              : `<li><a class="dropdown-item text-danger" href="#" onclick="toggleDisable('${d.username}', true);return false;"><i class="bi bi-slash-circle me-2"></i>Disable Account</a></li>`}
+          </ul>
+        </div>
+      </td>
+    </tr>`;
+  }).join('') || `<tr><td colspan="6" class="text-center text-muted-sm py-3">No directors created yet.</td></tr>`;
+}
+
+async function addDirector() {
+  const username = document.getElementById('newUsername').value.trim();
+  const email = document.getElementById('newEmail').value.trim();
+  hideAlert('alertBox');
+  if (!username || !email) { showAlert('alertBox', 'Username and email are required.', 'error'); return; }
+  try {
+    const data = await apiFetch('/admin/directors', { method: 'POST', body: JSON.stringify({ username, email }) });
+    showAlert('alertBox', data.message, 'success');
+    document.getElementById('newUsername').value = '';
+    document.getElementById('newEmail').value = '';
+    load();
+  } catch (err) { showAlert('alertBox', err.message, 'error'); }
+}
+
+async function toggleDisable(username, disable) {
+  try {
+    await apiFetch(`/admin/directors/${username}/${disable ? 'disable' : 'enable'}`, { method: 'POST' });
+    load();
+  } catch (err) { showAlert('alertBox', err.message, 'error'); }
+}
+
+async function resetPassword(username) {
+  try {
+    const data = await apiFetch(`/admin/directors/${username}/reset-password`, { method: 'POST' });
+    showAlert('alertBox', data.message, 'success');
+    load();
+  } catch (err) { showAlert('alertBox', err.message, 'error'); }
+}
+
+async function renewCert(username) {
+  try {
+    const data = await apiFetch(`/admin/directors/${username}/renew-certificate`, { method: 'POST' });
+    showAlert('alertBox', data.message, 'success');
+    load();
+  } catch (err) { showAlert('alertBox', err.message, 'error'); }
+}
+
+async function revokeCert(certSerial) {
+  const reason = prompt('Reason for revocation (optional):') || '';
+  try {
+    const data = await apiFetch('/admin/revoke-certificate', { method: 'POST', body: JSON.stringify({ certSerial, reason }) });
+    showAlert('alertBox', data.message, 'success');
+    load();
+  } catch (err) { showAlert('alertBox', err.message, 'error'); }
+}
+
+function viewProfile(username) {
+  const d = directorsCache.find(x => x.username === username);
+  if (!d) return;
+  document.getElementById('profileModalBody').innerHTML = `
+    <div class="d-flex flex-column gap-2">
+      <div class="d-flex justify-content-between"><span class="text-muted-sm">Username</span><span class="fw-semibold">${escapeHtml(d.username)}</span></div>
+      <div class="d-flex justify-content-between"><span class="text-muted-sm">Email</span><span>${escapeHtml(d.email)}</span></div>
+      <div class="d-flex justify-content-between"><span class="text-muted-sm">Certificate Serial</span><code>${d.certSerial}</code></div>
+      <div class="d-flex justify-content-between"><span class="text-muted-sm">Certificate Expires</span><span>${d.certExpiresAt ? new Date(d.certExpiresAt).toLocaleDateString() : '—'}</span></div>
+      <div class="d-flex justify-content-between"><span class="text-muted-sm">Created</span><span>${new Date(d.createdAt).toLocaleDateString()}</span></div>
+      <div class="d-flex justify-content-between"><span class="text-muted-sm">Voting Status</span><span>${d.hasVoted ? 'Voted' : 'Not yet voted'}</span></div>
+    </div>`;
+  new bootstrap.Modal(document.getElementById('profileModal')).show();
+}
+
+load();
+</script>
+</body>
+</html>

@@ -1,0 +1,751 @@
+[
+  {
+    "id": "5ad5e83a-8c74-4e5a-9df2-b0ef808139ac",
+    "timestamp": "2026-07-15T03:57:21.055Z",
+    "action": "SYSTEM_INITIALIZED",
+    "actor": "system",
+    "details": {
+      "message": "VoteGuard PKI infrastructure and audit chain initialized"
+    },
+    "prevHash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "hash": "2dddd38df278b79309c4e327154f4f682db56576c4c065be865fe169610c3486"
+  },
+  {
+    "id": "940529ff-4fc9-4fbb-892d-968b2d604212",
+    "timestamp": "2026-07-15T03:57:44.011Z",
+    "action": "OTP_ISSUED",
+    "actor": "admin",
+    "details": {},
+    "prevHash": "2dddd38df278b79309c4e327154f4f682db56576c4c065be865fe169610c3486",
+    "hash": "574309b12f39f82f7ae3e8d297c90723b535d1f8159d9b182dcd980ea46a711a"
+  },
+  {
+    "id": "b1bede81-83b2-4b2a-90a4-e19619180ae3",
+    "timestamp": "2026-07-15T03:58:26.497Z",
+    "action": "OTP_ISSUED",
+    "actor": "admin",
+    "details": {},
+    "prevHash": "574309b12f39f82f7ae3e8d297c90723b535d1f8159d9b182dcd980ea46a711a",
+    "hash": "53b2184904673beedb0309689e15ba8e0c18e4c641ddce18f667f418a2f58c9a"
+  },
+  {
+    "id": "82cdbf03-54ee-4c22-ad7a-5a2afc7c2852",
+    "timestamp": "2026-07-15T03:59:37.041Z",
+    "action": "OTP_RESENT",
+    "actor": "admin",
+    "details": {},
+    "prevHash": "53b2184904673beedb0309689e15ba8e0c18e4c641ddce18f667f418a2f58c9a",
+    "hash": "ee62223863b0cde682a2ca270e525571cfc65f0f4a4f1c849a4f93b0691ce5b7"
+  },
+  {
+    "id": "f2b4b164-6526-4462-a488-069ca1cceac6",
+    "timestamp": "2026-07-15T04:00:10.960Z",
+    "action": "LOGIN_SUCCESS",
+    "actor": "admin",
+    "details": {
+      "role": "election_official"
+    },
+    "prevHash": "ee62223863b0cde682a2ca270e525571cfc65f0f4a4f1c849a4f93b0691ce5b7",
+    "hash": "0d3a4addbf0fb7b8cb756ee6f4aa2037ff3393f274e78edbb60e85000b7eb507"
+  },
+  {
+    "id": "1e7dcbe9-bb50-42e4-87a1-3fa35bed3d09",
+    "timestamp": "2026-07-15T04:00:42.357Z",
+    "action": "DIRECTOR_CREATED",
+    "actor": "admin",
+    "details": {
+      "username": "rojika",
+      "email": "rairojika846@gmail.com",
+      "certSerial": "03eb",
+      "emailSent": false
+    },
+    "prevHash": "0d3a4addbf0fb7b8cb756ee6f4aa2037ff3393f274e78edbb60e85000b7eb507",
+    "hash": "73c45c669886a796f2589c2d929405b70bd060fadaba7fdd4c313359f2fb899d"
+  },
+  {
+    "id": "27483437-0804-44d1-b727-730b7dca4e11",
+    "timestamp": "2026-07-15T04:01:19.343Z",
+    "action": "DIRECTOR_CREATED",
+    "actor": "admin",
+    "details": {
+      "username": "Simma",
+      "email": "sampangsaraswati2023@gmail.com",
+      "certSerial": "03ec",
+      "emailSent": false
+    },
+    "prevHash": "73c45c669886a796f2589c2d929405b70bd060fadaba7fdd4c313359f2fb899d",
+    "hash": "302e6612e9ac4a43469d87908480a7a0c5baafb0d8a8c638434daa226a012de0"
+  },
+  {
+    "id": "3e8028c4-b89f-4838-bf9d-a54711cc48ee",
+    "timestamp": "2026-07-15T04:02:11.916Z",
+    "action": "LOGIN_FAILED",
+    "actor": "rojika",
+    "details": {
+      "reason": "bad credentials"
+    },
+    "prevHash": "302e6612e9ac4a43469d87908480a7a0c5baafb0d8a8c638434daa226a012de0",
+    "hash": "2abd8d814b48d8af7c40be26d1974fd98373f1c1011027425aaf1820a64e1fa3"
+  },
+  {
+    "id": "59eb190a-e4fa-438b-b4e9-5746e57cb86a",
+    "timestamp": "2026-07-15T04:02:13.165Z",
+    "action": "LOGIN_FAILED",
+    "actor": "rojika",
+    "details": {
+      "reason": "bad credentials"
+    },
+    "prevHash": "2abd8d814b48d8af7c40be26d1974fd98373f1c1011027425aaf1820a64e1fa3",
+    "hash": "7458aefe837a2f1c4f0baaa78e6268b116b998ad1bf5bedd7538b757494cf81a"
+  },
+  {
+    "id": "1007adce-b2e7-4be9-9f97-4f1b0ef757b8",
+    "timestamp": "2026-07-15T04:02:13.297Z",
+    "action": "LOGIN_FAILED",
+    "actor": "rojika",
+    "details": {
+      "reason": "bad credentials"
+    },
+    "prevHash": "7458aefe837a2f1c4f0baaa78e6268b116b998ad1bf5bedd7538b757494cf81a",
+    "hash": "db0647050751416dd2ea0284e2ed3f92bc1e79eff0415408d58a82338e482f1f"
+  },
+  {
+    "id": "6fd53899-3111-4911-b1bb-776f428a1612",
+    "timestamp": "2026-07-15T04:02:48.797Z",
+    "action": "OTP_ISSUED",
+    "actor": "admin",
+    "details": {},
+    "prevHash": "db0647050751416dd2ea0284e2ed3f92bc1e79eff0415408d58a82338e482f1f",
+    "hash": "61f50aef77834f34f68565904469e9401a663b67fdd11f0a3bc257c53d2f73db"
+  },
+  {
+    "id": "1d29394b-04e5-4c35-9c1c-236104b6d822",
+    "timestamp": "2026-07-15T04:03:05.407Z",
+    "action": "LOGIN_SUCCESS",
+    "actor": "admin",
+    "details": {
+      "role": "election_official"
+    },
+    "prevHash": "61f50aef77834f34f68565904469e9401a663b67fdd11f0a3bc257c53d2f73db",
+    "hash": "fe8195ba338bba94e293d86782e699ea54b0b651e195d795e27eb19dd9faa04e"
+  },
+  {
+    "id": "a244e7dd-912f-41a2-b233-bd2dabd40d7d",
+    "timestamp": "2026-07-15T04:03:14.293Z",
+    "action": "DIRECTOR_PASSWORD_RESET",
+    "actor": "admin",
+    "details": {
+      "username": "rojika",
+      "emailSent": false
+    },
+    "prevHash": "fe8195ba338bba94e293d86782e699ea54b0b651e195d795e27eb19dd9faa04e",
+    "hash": "7a1265a23ff4ea8aef8cd3e904d6ca250417d60502ef668beb7a117e1292e194"
+  },
+  {
+    "id": "b7f60ff9-da49-4cc6-96fb-4af8e1dd57a5",
+    "timestamp": "2026-07-15T04:04:22.524Z",
+    "action": "LOGIN_FAILED",
+    "actor": "rojika",
+    "details": {
+      "reason": "bad credentials"
+    },
+    "prevHash": "7a1265a23ff4ea8aef8cd3e904d6ca250417d60502ef668beb7a117e1292e194",
+    "hash": "f2cd1f318d7911e567e69b8e38063fdb501f4ce1fb99ae54ecb1908dba701309"
+  },
+  {
+    "id": "8908bcee-eb3f-4fd8-8eb9-b5bc446f0da1",
+    "timestamp": "2026-07-15T04:04:43.787Z",
+    "action": "LOGIN_FAILED",
+    "actor": "rairojika846@gmail.com",
+    "details": {
+      "reason": "bad credentials"
+    },
+    "prevHash": "f2cd1f318d7911e567e69b8e38063fdb501f4ce1fb99ae54ecb1908dba701309",
+    "hash": "d7c61cea88a561a4e6e7aa52c75596128f310bbd56e0ad4731c00413c8fc1417"
+  },
+  {
+    "id": "22215974-25c4-47f8-8e76-9493d96afea5",
+    "timestamp": "2026-07-15T04:05:11.445Z",
+    "action": "PASSWORD_CHANGE_REQUIRED",
+    "actor": "rojika",
+    "details": {},
+    "prevHash": "d7c61cea88a561a4e6e7aa52c75596128f310bbd56e0ad4731c00413c8fc1417",
+    "hash": "613157b0a9bcfacdf4e6db4a740e2e22c9c6350a6900a183f113558bf29538c3"
+  },
+  {
+    "id": "721ff57a-d869-4eeb-bab5-750601906416",
+    "timestamp": "2026-07-15T04:05:24.429Z",
+    "action": "PASSWORD_CHANGED",
+    "actor": "rojika",
+    "details": {},
+    "prevHash": "613157b0a9bcfacdf4e6db4a740e2e22c9c6350a6900a183f113558bf29538c3",
+    "hash": "748d6380117c94077ea8428f4aaf85c63c926e85ed066a68659b4d2adde3f06a"
+  },
+  {
+    "id": "7a814f42-8ebb-4c66-9688-0035e3a12ebd",
+    "timestamp": "2026-07-15T04:05:24.431Z",
+    "action": "OTP_ISSUED",
+    "actor": "rojika",
+    "details": {},
+    "prevHash": "748d6380117c94077ea8428f4aaf85c63c926e85ed066a68659b4d2adde3f06a",
+    "hash": "8e55bb43bd27b5bc035f3724211f6f03c6e24580b990c1a54947a0a040495a44"
+  },
+  {
+    "id": "10fd6d7d-6a31-4512-a666-b26ad7a13119",
+    "timestamp": "2026-07-15T04:05:42.238Z",
+    "action": "LOGIN_SUCCESS",
+    "actor": "rojika",
+    "details": {
+      "role": "voter"
+    },
+    "prevHash": "8e55bb43bd27b5bc035f3724211f6f03c6e24580b990c1a54947a0a040495a44",
+    "hash": "a259b8bd2f269ca2b8cdba4015406059831608de870619125ca07df6d41b443d"
+  },
+  {
+    "id": "f8755c27-09b3-4acc-ab46-4556622d83f9",
+    "timestamp": "2026-07-15T04:06:00.211Z",
+    "action": "VOTE_CAST",
+    "actor": "rojika",
+    "details": {
+      "voteId": "55fe88e5-2e17-4d11-af5f-8ba97a6a03a4",
+      "receipt": "87a8042a61ae0858444c6c5093ccfdf9f78d8dd53ee38db94bc178079488682c"
+    },
+    "prevHash": "a259b8bd2f269ca2b8cdba4015406059831608de870619125ca07df6d41b443d",
+    "hash": "1f40291cb623809eef9bdfba9d3e212c9dde780030b03a7672d913c58cb4d177"
+  },
+  {
+    "id": "659c36da-9d92-434c-9d46-c82e25f25cca",
+    "timestamp": "2026-07-15T04:08:28.670Z",
+    "action": "LOGIN_FAILED",
+    "actor": "simma",
+    "details": {
+      "reason": "bad credentials"
+    },
+    "prevHash": "1f40291cb623809eef9bdfba9d3e212c9dde780030b03a7672d913c58cb4d177",
+    "hash": "1abb00e98477ea814d7c8e67ed55543de552dbc4140ccb44bb366cd321cc1932"
+  },
+  {
+    "id": "a9e63bd2-39df-4c57-93b2-19e69648e4a8",
+    "timestamp": "2026-07-15T04:08:44.840Z",
+    "action": "PASSWORD_CHANGE_REQUIRED",
+    "actor": "Simma",
+    "details": {},
+    "prevHash": "1abb00e98477ea814d7c8e67ed55543de552dbc4140ccb44bb366cd321cc1932",
+    "hash": "d224525b2c555d73905cdfb9c3736c66c1042adf5cdf2eae353f75700d2a323e"
+  },
+  {
+    "id": "a55d65d8-2eaf-496d-9461-dc6394634917",
+    "timestamp": "2026-07-15T04:08:59.606Z",
+    "action": "PASSWORD_CHANGED",
+    "actor": "Simma",
+    "details": {},
+    "prevHash": "d224525b2c555d73905cdfb9c3736c66c1042adf5cdf2eae353f75700d2a323e",
+    "hash": "4d3fcc0c54799489a6bbde483f4f1f699edc37c902dd75e0d78ac1f6f874e43f"
+  },
+  {
+    "id": "215ffe35-be6c-4279-b3fe-765cccfdac5e",
+    "timestamp": "2026-07-15T04:08:59.607Z",
+    "action": "OTP_ISSUED",
+    "actor": "Simma",
+    "details": {},
+    "prevHash": "4d3fcc0c54799489a6bbde483f4f1f699edc37c902dd75e0d78ac1f6f874e43f",
+    "hash": "ea151c6074952a9ab665ad2cdf0900b2beb81b262317d8faacc1dbf7f9606744"
+  },
+  {
+    "id": "7b9a80cb-bb85-4fb0-a1fd-253ed9dc55b2",
+    "timestamp": "2026-07-15T04:09:10.503Z",
+    "action": "LOGIN_SUCCESS",
+    "actor": "Simma",
+    "details": {
+      "role": "voter"
+    },
+    "prevHash": "ea151c6074952a9ab665ad2cdf0900b2beb81b262317d8faacc1dbf7f9606744",
+    "hash": "4fc03b3e8664ea0a7e09dd995c77b1c51fdc24e94444faa84dca0ed6f38296c9"
+  },
+  {
+    "id": "a7722a3a-f1ad-4735-b16b-05e55e359663",
+    "timestamp": "2026-07-15T04:10:00.261Z",
+    "action": "VOTE_CAST",
+    "actor": "Simma",
+    "details": {
+      "voteId": "03b69ddb-2fda-4287-a5a4-8b650b1312fa",
+      "receipt": "913e9d33e4cf094b70907fa6015f5ad007beea0fcd47c8f8ded56ff79b6621a0"
+    },
+    "prevHash": "4fc03b3e8664ea0a7e09dd995c77b1c51fdc24e94444faa84dca0ed6f38296c9",
+    "hash": "9615be2323570ff7859b7d533d30c98a6ef7507f45547cb3f8491a153b3cff3d"
+  },
+  {
+    "id": "8addd335-25ec-4740-93a3-d6679f824b80",
+    "timestamp": "2026-07-15T04:10:56.893Z",
+    "action": "VOTE_VERIFIED",
+    "actor": "Simma",
+    "details": {
+      "receipt": "913e9d33e4cf094b70907fa6015f5ad007beea0fcd47c8f8ded56ff79b6621a0",
+      "signatureValid": true,
+      "hashIntact": true,
+      "certValid": true
+    },
+    "prevHash": "9615be2323570ff7859b7d533d30c98a6ef7507f45547cb3f8491a153b3cff3d",
+    "hash": "7ccf6acb1c776d4a4b3f957df3c731f7fad89f7d867077b05d2cc306e6477c54"
+  },
+  {
+    "id": "eaf659ea-1ff6-4f3b-b510-0e16feb2a610",
+    "timestamp": "2026-07-15T04:11:25.944Z",
+    "action": "VOTE_VERIFIED",
+    "actor": "Simma",
+    "details": {
+      "receipt": "913e9d33e4cf094b70907fa6015f5ad007beea0fcd47c8f8ded56ff79b6621a0",
+      "signatureValid": true,
+      "hashIntact": true,
+      "certValid": true
+    },
+    "prevHash": "7ccf6acb1c776d4a4b3f957df3c731f7fad89f7d867077b05d2cc306e6477c54",
+    "hash": "3fc520e08cad4e7a2b419d329fddf1613be99d6b4148ccd43c6aca99ca54365f"
+  },
+  {
+    "id": "00ae3759-e1fe-4722-957a-d21497bbe86b",
+    "timestamp": "2026-07-15T04:12:35.896Z",
+    "action": "OTP_ISSUED",
+    "actor": "admin",
+    "details": {},
+    "prevHash": "3fc520e08cad4e7a2b419d329fddf1613be99d6b4148ccd43c6aca99ca54365f",
+    "hash": "a973c66bf21f1792b943911484fa68e66d1373e7a4390c6e2a38d3eec396e85d"
+  },
+  {
+    "id": "ac71eb17-6b44-4e9e-a7ef-8eb06918b661",
+    "timestamp": "2026-07-15T04:12:53.501Z",
+    "action": "LOGIN_SUCCESS",
+    "actor": "admin",
+    "details": {
+      "role": "election_official"
+    },
+    "prevHash": "a973c66bf21f1792b943911484fa68e66d1373e7a4390c6e2a38d3eec396e85d",
+    "hash": "43012ebb9592df0ce35b833b72895ddcb8a9a581f5c6fb2a3008b868cac7b029"
+  },
+  {
+    "id": "e7622663-3922-412a-95bf-e8d1c63f1270",
+    "timestamp": "2026-07-15T04:13:16.245Z",
+    "action": "RESULTS_TALLIED",
+    "actor": "admin",
+    "details": {
+      "validVotes": 2,
+      "invalidVotes": 0
+    },
+    "prevHash": "43012ebb9592df0ce35b833b72895ddcb8a9a581f5c6fb2a3008b868cac7b029",
+    "hash": "69af92bf34cdb8066ba462a30ad172d78ef84cc6c2074f38d7e666f18f6160b8"
+  },
+  {
+    "id": "69b34d75-2a73-4e64-bbb2-e23e2b9e50cf",
+    "timestamp": "2026-07-15T08:39:56.340Z",
+    "action": "OTP_ISSUED",
+    "actor": "admin",
+    "details": {},
+    "prevHash": "69af92bf34cdb8066ba462a30ad172d78ef84cc6c2074f38d7e666f18f6160b8",
+    "hash": "bc2f11ece59ee9ae4b25af5b125e110fd1c0a53435071e08d65394c59d6f5a06"
+  },
+  {
+    "id": "ee8436aa-e48a-480f-aad5-246664580a5a",
+    "timestamp": "2026-07-15T08:40:07.327Z",
+    "action": "LOGIN_SUCCESS",
+    "actor": "admin",
+    "details": {
+      "role": "election_official"
+    },
+    "prevHash": "bc2f11ece59ee9ae4b25af5b125e110fd1c0a53435071e08d65394c59d6f5a06",
+    "hash": "0a5cd05f6a90ddad3bb3e997de62d821310d847dbf8ee16e07df7cd75a55816e"
+  },
+  {
+    "id": "f01f130c-ccde-4ef8-ae18-05cd4ab942ac",
+    "timestamp": "2026-07-15T08:40:24.889Z",
+    "action": "RESULTS_TALLIED",
+    "actor": "admin",
+    "details": {
+      "validVotes": 2,
+      "invalidVotes": 0
+    },
+    "prevHash": "0a5cd05f6a90ddad3bb3e997de62d821310d847dbf8ee16e07df7cd75a55816e",
+    "hash": "c51cb00dce5fe9fe84abd762a8c870af514f8de761f09631539ce1dbd6cc0099"
+  },
+  {
+    "id": "404d0155-b83c-485b-b934-a899815dd18f",
+    "timestamp": "2026-07-17T09:14:55.273Z",
+    "action": "OTP_ISSUED",
+    "actor": "admin",
+    "details": {},
+    "prevHash": "c51cb00dce5fe9fe84abd762a8c870af514f8de761f09631539ce1dbd6cc0099",
+    "hash": "e2794dc204be4fe352bf2182f374a5103c2375bc2438e56b6d4bc62105a40ec3"
+  },
+  {
+    "id": "72aa930a-84d7-4aa0-8983-54825e28c97e",
+    "timestamp": "2026-07-17T09:15:10.389Z",
+    "action": "LOGIN_SUCCESS",
+    "actor": "admin",
+    "details": {
+      "role": "election_official"
+    },
+    "prevHash": "e2794dc204be4fe352bf2182f374a5103c2375bc2438e56b6d4bc62105a40ec3",
+    "hash": "f76d3b46f02987c456976bd7a59e135bc6145f1b3ff0908663a7e43442f689ef"
+  },
+  {
+    "id": "3cfeb175-97be-4fb4-a6a4-3c0a9d884d11",
+    "timestamp": "2026-07-17T16:08:00.963Z",
+    "action": "OTP_ISSUED",
+    "actor": "admin",
+    "details": {},
+    "prevHash": "f76d3b46f02987c456976bd7a59e135bc6145f1b3ff0908663a7e43442f689ef",
+    "hash": "f5972bbf04814eca2caf2723ac5101a832c022241ed88b66d776c09f33b6d21a"
+  },
+  {
+    "id": "b5f3f14d-6fb4-458a-8304-81b8ea4b4efa",
+    "timestamp": "2026-07-17T16:08:09.747Z",
+    "action": "LOGIN_SUCCESS",
+    "actor": "admin",
+    "details": {
+      "role": "election_official"
+    },
+    "prevHash": "f5972bbf04814eca2caf2723ac5101a832c022241ed88b66d776c09f33b6d21a",
+    "hash": "7556b5fe35dda6f4171bd5710c66cfb05ad9661812faf77b2243953a284d1edc"
+  },
+  {
+    "id": "b4d16ecc-055a-43eb-ba39-4aee09257d2e",
+    "timestamp": "2026-07-17T16:08:24.216Z",
+    "action": "DIRECTOR_PASSWORD_RESET",
+    "actor": "admin",
+    "details": {
+      "username": "rojika",
+      "emailSent": false
+    },
+    "prevHash": "7556b5fe35dda6f4171bd5710c66cfb05ad9661812faf77b2243953a284d1edc",
+    "hash": "e545979f0539594b56785a6fcc68b48b945b1b38774623ca91ecc40d68bf58ce"
+  },
+  {
+    "id": "622580bb-f631-4289-8a95-69d7eeefc630",
+    "timestamp": "2026-07-17T16:08:53.522Z",
+    "action": "PASSWORD_CHANGE_REQUIRED",
+    "actor": "rojika",
+    "details": {},
+    "prevHash": "e545979f0539594b56785a6fcc68b48b945b1b38774623ca91ecc40d68bf58ce",
+    "hash": "3f5517373a69191f385968fd6e963155522e8292507f50c5c0142858d385e515"
+  },
+  {
+    "id": "d66c7234-636e-4c89-bd8a-544821a46540",
+    "timestamp": "2026-07-17T16:10:11.517Z",
+    "action": "PASSWORD_CHANGE_REQUIRED",
+    "actor": "rojika",
+    "details": {},
+    "prevHash": "3f5517373a69191f385968fd6e963155522e8292507f50c5c0142858d385e515",
+    "hash": "501edd18159ec7114d5eaeb669f6da2b6d11db24b84e94e54fa31c84f86b5d1a"
+  },
+  {
+    "id": "cb4d404f-4abf-41e3-b123-211312c0af0c",
+    "timestamp": "2026-07-17T16:10:23.857Z",
+    "action": "PASSWORD_CHANGED",
+    "actor": "rojika",
+    "details": {},
+    "prevHash": "501edd18159ec7114d5eaeb669f6da2b6d11db24b84e94e54fa31c84f86b5d1a",
+    "hash": "6a585fe6dd6558b6aae0756e5022e652d782d33dc41ed32930eada5b62d752df"
+  },
+  {
+    "id": "942ac3cf-cd5d-4474-9165-6af21d7bb19a",
+    "timestamp": "2026-07-17T16:10:23.860Z",
+    "action": "OTP_ISSUED",
+    "actor": "rojika",
+    "details": {},
+    "prevHash": "6a585fe6dd6558b6aae0756e5022e652d782d33dc41ed32930eada5b62d752df",
+    "hash": "8373cd9f5920589116a61604598a5b10d5b238cdefc68664c820f69aedc63588"
+  },
+  {
+    "id": "9b59635e-393d-4bfc-99a4-010f7030c803",
+    "timestamp": "2026-07-17T16:10:33.111Z",
+    "action": "LOGIN_SUCCESS",
+    "actor": "rojika",
+    "details": {
+      "role": "voter"
+    },
+    "prevHash": "8373cd9f5920589116a61604598a5b10d5b238cdefc68664c820f69aedc63588",
+    "hash": "2edeb5ba09104fc60559b9d762e536ea6e8bf6121efb2a125c67794f9a5c145a"
+  },
+  {
+    "id": "047bdc44-3732-4ab1-8d4c-0ed09d37ce00",
+    "timestamp": "2026-07-19T06:53:46.552Z",
+    "action": "OTP_ISSUED",
+    "actor": "admin",
+    "details": {},
+    "prevHash": "2edeb5ba09104fc60559b9d762e536ea6e8bf6121efb2a125c67794f9a5c145a",
+    "hash": "bbed6e3e1ed67970e861b3bb07a98418aa8d5bfb6be4bbece58f761a8ffbf500"
+  },
+  {
+    "id": "3c7f06b2-917d-4e16-a48f-2bf517336490",
+    "timestamp": "2026-07-19T06:54:02.019Z",
+    "action": "OTP_ISSUED",
+    "actor": "rojika",
+    "details": {},
+    "prevHash": "bbed6e3e1ed67970e861b3bb07a98418aa8d5bfb6be4bbece58f761a8ffbf500",
+    "hash": "40a99e142ec5fbd12c60b4782fe8ff3b155e789f68448a7d8b34d30c2e949bb9"
+  },
+  {
+    "id": "1cedac72-7e3e-4e62-a2e0-e2a3950983d2",
+    "timestamp": "2026-07-19T06:54:03.121Z",
+    "action": "OTP_ISSUED",
+    "actor": "rojika",
+    "details": {},
+    "prevHash": "40a99e142ec5fbd12c60b4782fe8ff3b155e789f68448a7d8b34d30c2e949bb9",
+    "hash": "2794c72c56e34ce70dde6315243cf54e2fdbf28454ffa4d3229d6e0be388d38d"
+  },
+  {
+    "id": "41144420-8632-4d7c-8ecc-1d91b2681eb9",
+    "timestamp": "2026-07-19T06:54:15.801Z",
+    "action": "LOGIN_SUCCESS",
+    "actor": "rojika",
+    "details": {
+      "role": "voter"
+    },
+    "prevHash": "2794c72c56e34ce70dde6315243cf54e2fdbf28454ffa4d3229d6e0be388d38d",
+    "hash": "4835aca3f067ce85c645e0322e910c831ebf48730b042d62785c70779e238e92"
+  },
+  {
+    "id": "73952f1b-3c29-494b-afc6-ae35e1b4b39e",
+    "timestamp": "2026-07-19T06:58:01.304Z",
+    "action": "OTP_ISSUED",
+    "actor": "admin",
+    "details": {},
+    "prevHash": "4835aca3f067ce85c645e0322e910c831ebf48730b042d62785c70779e238e92",
+    "hash": "8e6079aa7ce133a8f2c4818b9e7b6d429e53a0d370380d4ccf1cdad6761a063c"
+  },
+  {
+    "id": "001ef39a-1052-45d7-92ba-2b24a204d35f",
+    "timestamp": "2026-07-19T06:58:10.532Z",
+    "action": "OTP_ISSUED",
+    "actor": "admin",
+    "details": {},
+    "prevHash": "8e6079aa7ce133a8f2c4818b9e7b6d429e53a0d370380d4ccf1cdad6761a063c",
+    "hash": "8de1629b23dd303f61e47906d7ced21ec44694871d8d3c5f33088b2ce041fab3"
+  },
+  {
+    "id": "50aa313b-8feb-4b1b-899f-38182fa2134a",
+    "timestamp": "2026-07-19T06:58:13.182Z",
+    "action": "OTP_FAILED",
+    "actor": "admin",
+    "details": {
+      "reason": "Incorrect OTP"
+    },
+    "prevHash": "8de1629b23dd303f61e47906d7ced21ec44694871d8d3c5f33088b2ce041fab3",
+    "hash": "b21a6c405381ae1faf2206633b9df34b8c055523ce4d059f82f7dafe36e0e269"
+  },
+  {
+    "id": "327b4cf4-66c9-475d-87ba-155ffef973ac",
+    "timestamp": "2026-07-19T06:58:26.479Z",
+    "action": "LOGIN_SUCCESS",
+    "actor": "admin",
+    "details": {
+      "role": "election_official"
+    },
+    "prevHash": "b21a6c405381ae1faf2206633b9df34b8c055523ce4d059f82f7dafe36e0e269",
+    "hash": "9f82118a3063a0a2982df504a5bd8ffe3dac2970b018962d85fa7478e9f36f68"
+  },
+  {
+    "id": "01a7df1b-3741-41fe-9c5f-f2f1f30b3292",
+    "timestamp": "2026-07-19T06:58:49.401Z",
+    "action": "DIRECTOR_CREATED",
+    "actor": "admin",
+    "details": {
+      "username": "Rojika",
+      "email": "rairojika998@gmail.com",
+      "certSerial": "03e9",
+      "emailSent": false
+    },
+    "prevHash": "9f82118a3063a0a2982df504a5bd8ffe3dac2970b018962d85fa7478e9f36f68",
+    "hash": "e732e154875d929fa58a96338f8bd073493a3854bc8c60d95737742b3f583460"
+  },
+  {
+    "id": "f99a3e40-0187-49db-9108-314326231185",
+    "timestamp": "2026-07-19T06:59:33.878Z",
+    "action": "PASSWORD_CHANGE_REQUIRED",
+    "actor": "Rojika",
+    "details": {},
+    "prevHash": "e732e154875d929fa58a96338f8bd073493a3854bc8c60d95737742b3f583460",
+    "hash": "2542e88a9d2994856658b39b60aeb487ffeec6734103843c4e57c21033771e13"
+  },
+  {
+    "id": "925bc1cb-6d32-493d-8b7f-ce6c0edb0d11",
+    "timestamp": "2026-07-19T07:01:02.138Z",
+    "action": "PASSWORD_CHANGED",
+    "actor": "Rojika",
+    "details": {},
+    "prevHash": "2542e88a9d2994856658b39b60aeb487ffeec6734103843c4e57c21033771e13",
+    "hash": "57c11ff30ba94a5cf6ba71f422f7ef9bb1231282050cd527e7f1b583bd877d8a"
+  },
+  {
+    "id": "6b2f0d99-5638-4956-9649-670b31108534",
+    "timestamp": "2026-07-19T07:01:02.140Z",
+    "action": "OTP_ISSUED",
+    "actor": "Rojika",
+    "details": {},
+    "prevHash": "57c11ff30ba94a5cf6ba71f422f7ef9bb1231282050cd527e7f1b583bd877d8a",
+    "hash": "3d97c0ed3184e16c743e6119c33110ac1025b80b43fbc5ba2a9be03751d796d7"
+  },
+  {
+    "id": "d9f51d0f-6404-444b-983d-c9d0082c6dc1",
+    "timestamp": "2026-07-19T07:01:18.200Z",
+    "action": "LOGIN_SUCCESS",
+    "actor": "Rojika",
+    "details": {
+      "role": "voter"
+    },
+    "prevHash": "3d97c0ed3184e16c743e6119c33110ac1025b80b43fbc5ba2a9be03751d796d7",
+    "hash": "9b59affd232abeb2e2877123f3e90717c53ae02e235186978ca2940e2426e060"
+  },
+  {
+    "id": "9c0dd465-f2ec-46aa-9989-379cf0f06cc0",
+    "timestamp": "2026-07-19T07:04:57.525Z",
+    "action": "VOTE_CAST",
+    "actor": "Rojika",
+    "details": {
+      "voteId": "6ecb1135-5f28-4675-aa37-a63766fddf32",
+      "receipt": "18b4b5c43a27b434160134c15bfef1f00dadf67ff756e4714b51e60cae530922"
+    },
+    "prevHash": "9b59affd232abeb2e2877123f3e90717c53ae02e235186978ca2940e2426e060",
+    "hash": "2459386c7326bba370559cf29e432472d64592af990efa483d4dc8e3fd5561c4"
+  },
+  {
+    "id": "d5cf03c5-bf85-456c-8721-bad5e68cd90e",
+    "timestamp": "2026-07-19T07:07:42.904Z",
+    "action": "VOTE_VERIFIED",
+    "actor": "Rojika",
+    "details": {
+      "receipt": "18b4b5c43a27b434160134c15bfef1f00dadf67ff756e4714b51e60cae530922",
+      "signatureValid": true,
+      "hashIntact": true,
+      "certValid": true
+    },
+    "prevHash": "2459386c7326bba370559cf29e432472d64592af990efa483d4dc8e3fd5561c4",
+    "hash": "a2f807ce40c00e6af26f7e18891c0f46b7f63a696b4375b6800ccca9f5b87216"
+  },
+  {
+    "id": "af48d535-dc5d-4145-81dc-3850d02fd2d3",
+    "timestamp": "2026-07-19T07:08:36.978Z",
+    "action": "OTP_ISSUED",
+    "actor": "admin",
+    "details": {},
+    "prevHash": "a2f807ce40c00e6af26f7e18891c0f46b7f63a696b4375b6800ccca9f5b87216",
+    "hash": "06dd10ab6b6e67baffbdbd25e368174d6d42f240939206dc5c7e69a4ec70a0e1"
+  },
+  {
+    "id": "b955becc-5bef-4cec-8260-21d94431e32d",
+    "timestamp": "2026-07-19T07:08:49.199Z",
+    "action": "LOGIN_SUCCESS",
+    "actor": "admin",
+    "details": {
+      "role": "election_official"
+    },
+    "prevHash": "06dd10ab6b6e67baffbdbd25e368174d6d42f240939206dc5c7e69a4ec70a0e1",
+    "hash": "c3a157623f3a5ba76fc702101cc25f5b3a87bf289e1e803639728aae0ef0db91"
+  },
+  {
+    "id": "156b84cf-2ff0-4ab6-bb9a-ea5995be2aaa",
+    "timestamp": "2026-07-19T07:08:55.741Z",
+    "action": "RESULTS_TALLIED",
+    "actor": "admin",
+    "details": {
+      "validVotes": 3,
+      "invalidVotes": 0
+    },
+    "prevHash": "c3a157623f3a5ba76fc702101cc25f5b3a87bf289e1e803639728aae0ef0db91",
+    "hash": "136477dcc92659bf0e1e70f959fcff1486863d280e0253eed00efff58bd1f784"
+  },
+  {
+    "id": "97d53b6d-ed97-4300-a1c5-0b5337c53c02",
+    "timestamp": "2026-07-19T07:09:53.639Z",
+    "action": "RESULTS_TALLIED",
+    "actor": "admin",
+    "details": {
+      "validVotes": 3,
+      "invalidVotes": 0
+    },
+    "prevHash": "136477dcc92659bf0e1e70f959fcff1486863d280e0253eed00efff58bd1f784",
+    "hash": "deb20301bb61764ae7d8db822b9e0cfaeec569294f7d127e00470b3a92d62b49"
+  },
+  {
+    "id": "045ad598-09c9-45af-8e3a-4d0ceaab82ad",
+    "timestamp": "2026-07-19T10:11:54.603Z",
+    "action": "OTP_ISSUED",
+    "actor": "rojika",
+    "details": {},
+    "prevHash": "deb20301bb61764ae7d8db822b9e0cfaeec569294f7d127e00470b3a92d62b49",
+    "hash": "8ab2ad2cc0aab04a1ffbe87bbb19660fea19c0501b6d6e8244fb1ea1a5bf3e1b"
+  },
+  {
+    "id": "1aec396a-0ed9-4d81-a827-c5fe67a81e54",
+    "timestamp": "2026-07-19T10:12:17.356Z",
+    "action": "OTP_FAILED",
+    "actor": "rojika",
+    "details": {
+      "reason": "Incorrect OTP"
+    },
+    "prevHash": "8ab2ad2cc0aab04a1ffbe87bbb19660fea19c0501b6d6e8244fb1ea1a5bf3e1b",
+    "hash": "12df85936c70f0361b8f56c5cd43ea488d192413287b07919441d67b710f6d31"
+  },
+  {
+    "id": "1c33aef1-ae42-48a6-820b-ae540bcd9ef3",
+    "timestamp": "2026-07-19T10:12:37.008Z",
+    "action": "LOGIN_SUCCESS",
+    "actor": "rojika",
+    "details": {
+      "role": "voter"
+    },
+    "prevHash": "12df85936c70f0361b8f56c5cd43ea488d192413287b07919441d67b710f6d31",
+    "hash": "86a9937181a74d075c9efae9f852bbf43d4cc0d6498ef6455217a0f99727606b"
+  },
+  {
+    "id": "e31e4ceb-e132-4249-888b-f83393fe59ee",
+    "timestamp": "2026-07-21T07:01:56.922Z",
+    "action": "OTP_ISSUED",
+    "actor": "admin",
+    "details": {},
+    "prevHash": "86a9937181a74d075c9efae9f852bbf43d4cc0d6498ef6455217a0f99727606b",
+    "hash": "9d8e375d07efb5eec8aaef5a0f9274898733523c287be91f9aae1e57a193ff91"
+  },
+  {
+    "id": "83afd990-5b02-495f-87dc-186922fbe6cc",
+    "timestamp": "2026-07-21T07:02:13.774Z",
+    "action": "OTP_ISSUED",
+    "actor": "Rojika",
+    "details": {},
+    "prevHash": "9d8e375d07efb5eec8aaef5a0f9274898733523c287be91f9aae1e57a193ff91",
+    "hash": "2a420142c88356ca84eaea0a81641415197bbaaedaa96290e15425e773634f66"
+  },
+  {
+    "id": "57f69d0f-adcf-460e-a7a5-8b0e0faea646",
+    "timestamp": "2026-07-21T07:02:33.349Z",
+    "action": "OTP_ISSUED",
+    "actor": "admin",
+    "details": {},
+    "prevHash": "2a420142c88356ca84eaea0a81641415197bbaaedaa96290e15425e773634f66",
+    "hash": "6ae2a9e5e35f446bc45afd37b29866fe9ff8e11cadfb0c79414f948140ad8cae"
+  },
+  {
+    "id": "0cfe6537-fecb-4025-99c4-85048ce9f646",
+    "timestamp": "2026-07-21T07:02:41.643Z",
+    "action": "LOGIN_SUCCESS",
+    "actor": "admin",
+    "details": {
+      "role": "election_official"
+    },
+    "prevHash": "6ae2a9e5e35f446bc45afd37b29866fe9ff8e11cadfb0c79414f948140ad8cae",
+    "hash": "be0b55acdb96ade7cc314db64156107345a681baa5178866132715b6d5487f78"
+  },
+  {
+    "id": "c34a58fa-4056-419e-9940-e3f8e1b83056",
+    "timestamp": "2026-07-21T07:03:03.344Z",
+    "action": "DIRECTOR_CREATED",
+    "actor": "admin",
+    "details": {
+      "username": "Himal",
+      "email": "Himalrai992@gmail.com",
+      "certSerial": "03e9",
+      "emailSent": false
+    },
+    "prevHash": "be0b55acdb96ade7cc314db64156107345a681baa5178866132715b6d5487f78",
+    "hash": "6db561b8ea687743c5e4dd4bc035778fdfde4518bd37d50505060ffe0b98a2b1"
+  }
+]

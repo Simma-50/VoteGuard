@@ -1,0 +1,74 @@
+[
+  {
+    "id": "724b99e0-4c37-4f07-8606-2405e5283e6d",
+    "username": "admin",
+    "email": "admin@voteguard.demo",
+    "passwordHash": "$2a$10$aeiUnrBhYBnmZLDOFh/hQOAA3kUMQDc9iTDhAfQRWYGTyk8wDQtOm",
+    "role": "election_official",
+    "certSerial": "03e9",
+    "hasVoted": false,
+    "disabled": false,
+    "mustChangePassword": false,
+    "createdAt": "2026-07-15T03:57:20.933Z"
+  },
+  {
+    "id": "a0788c97-41bc-4628-9efb-050e98d848f7",
+    "username": "auditor1",
+    "email": "auditor1@voteguard.demo",
+    "passwordHash": "$2a$10$joZeRKX53ORTn4sU.lFbUOKdYJB6Fv5jgDhP5PpJioT5MXfPUBbAu",
+    "role": "auditor",
+    "certSerial": "03ea",
+    "hasVoted": false,
+    "disabled": false,
+    "mustChangePassword": false,
+    "createdAt": "2026-07-15T03:57:21.055Z"
+  },
+  {
+    "id": "e81389c1-62ab-4470-b9d8-352838ff793c",
+    "username": "rojika",
+    "email": "rairojika846@gmail.com",
+    "passwordHash": "$2a$10$cdM4/w2YajsvyloLixr0yets/5qspp.jZ8QqtYUKULkLD5Zcbm4XK",
+    "role": "voter",
+    "certSerial": "03eb",
+    "hasVoted": true,
+    "disabled": false,
+    "mustChangePassword": false,
+    "createdAt": "2026-07-15T04:00:42.357Z"
+  },
+  {
+    "id": "0456ef7c-cf05-487f-af15-d85523c71191",
+    "username": "Simma",
+    "email": "sampangsaraswati2023@gmail.com",
+    "passwordHash": "$2a$10$P0/fwW1r4oKzx2lYbHsbdOsp5llhd6hWdcigLYr8F9okGXTlGhYJW",
+    "role": "voter",
+    "certSerial": "03ec",
+    "hasVoted": true,
+    "disabled": false,
+    "mustChangePassword": false,
+    "createdAt": "2026-07-15T04:01:19.343Z"
+  },
+  {
+    "id": "5ea06a9c-156f-4c5a-a8a5-609b0ba4dfaf",
+    "username": "Rojika",
+    "email": "rairojika998@gmail.com",
+    "passwordHash": "$2a$10$Jm53aeGJE8Eo6ox1rk2B9O.yfsgdUoX.zfVUc5kyGalMtZTlqQ8Z.",
+    "role": "voter",
+    "certSerial": "03e9",
+    "hasVoted": true,
+    "disabled": false,
+    "mustChangePassword": false,
+    "createdAt": "2026-07-19T06:58:49.400Z"
+  },
+  {
+    "id": "381776d8-d5f0-4c25-802b-fe96c9685b99",
+    "username": "Himal",
+    "email": "Himalrai992@gmail.com",
+    "passwordHash": "$2a$10$r/noSsz29iYZEG2crtjR0OZyyl8rdio6o7.OPZ5KPPImbIE87OTqi",
+    "role": "voter",
+    "certSerial": "03e9",
+    "hasVoted": false,
+    "disabled": false,
+    "mustChangePassword": true,
+    "createdAt": "2026-07-21T07:03:03.344Z"
+  }
+]

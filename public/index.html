@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VoteGuard</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+<div id="nav"></div>
+
+<div class="login-shell">
+  <div class="card-vg p-4 p-lg-5 fade-in" style="max-width: 480px; width: 100%;">
+    <div class="text-center mb-4">
+      <div class="stat-icon blue mx-auto mb-3" style="width:58px;height:58px;font-size:1.7rem;"><i class="bi bi-shield-lock-fill"></i></div>
+      <h4 class="fw-bold mb-1">VoteGuard</h4>
+      <p class="text-muted-sm mb-0">Corporate Board of Directors Election System</p>
+    </div>
+
+    <div class="widget-row">
+      <div class="d-flex align-items-center gap-2">
+        <span class="status-dot neutral" id="sysDot"></span>
+        <span class="small fw-semibold">System Status</span>
+      </div>
+      <span id="sysPill" class="pill neutral">Checking</span>
+    </div>
+    <div class="widget-row">
+      <div class="d-flex align-items-center gap-2">
+        <span class="status-dot neutral" id="electionDot"></span>
+        <span class="small fw-semibold">Election Status</span>
+      </div>
+      <span id="electionPill" class="pill neutral">Checking</span>
+    </div>
+    <div class="widget-row">
+      <div class="d-flex align-items-center gap-2">
+        <span class="status-dot neutral" id="caDot"></span>
+        <span class="small fw-semibold">Certificate Authority</span>
+      </div>
+      <span id="caPill" class="pill neutral">Checking</span>
+    </div>
+    <div class="widget-row">
+      <div class="d-flex align-items-center gap-2">
+        <span class="status-dot neutral" id="repoDot"></span>
+        <span class="small fw-semibold">Certificate Repository</span>
+      </div>
+      <span id="repoPill" class="pill neutral">Checking</span>
+    </div>
+    <div class="widget-row">
+      <div class="d-flex align-items-center gap-2">
+        <span class="status-dot neutral" id="auditDot"></span>
+        <span class="small fw-semibold">Audit Log</span>
+      </div>
+      <span id="auditPill" class="pill neutral">Checking</span>
+    </div>
+
+    <div class="d-grid mt-4">
+      <a href="/login.html" class="btn btn-vg-primary rounded-3 py-2"><i class="bi bi-box-arrow-in-right me-2"></i>Sign In</a>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/js/common.js"></script>
+<script>
+renderNav();
+
+function setWidget(prefix, ok, okText, badText) {
+  document.getElementById(prefix + 'Dot').className = 'status-dot ' + (ok ? 'ok' : 'bad');
+  document.getElementById(prefix + 'Pill').className = 'pill ' + (ok ? 'ok' : 'bad');
+  document.getElementById(prefix + 'Pill').textContent = ok ? okText : badText;
+}
+
+async function loadStatus() {
+  try {
+    const data = await (await fetch('/api/public/status')).json();
+    setWidget('sys', data.systemStatus === 'operational', 'Operational', 'Degraded');
+    setWidget('election', true, data.election.status === 'open' ? 'Open' : 'Closed', 'Unavailable');
+    document.getElementById('electionPill').className = 'pill ' + (data.election.status === 'open' ? 'ok' : 'neutral');
+    document.getElementById('electionDot').className = 'status-dot ' + (data.election.status === 'open' ? 'ok' : 'neutral');
+    setWidget('ca', data.caStatus === 'operational', 'Operational', 'Unreachable');
+    setWidget('repo', true, `${data.certificateRepository.active} Active`, 'Unavailable');
+    setWidget('audit', data.auditLog.intact, 'Verified Intact', 'Attention Needed');
+  } catch (err) {
+    ['sys', 'election', 'ca', 'repo', 'audit'].forEach(p => setWidget(p, false, 'Unavailable', 'Unavailable'));
+  }
+}
+loadStatus();
+</script>
+</body>
+</html>

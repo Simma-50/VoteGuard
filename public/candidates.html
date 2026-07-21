@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Candidates — VoteGuard</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+<div id="sidebar"></div>
+<div id="topbar"></div>
+
+<main class="app-main">
+  <div class="row g-4">
+    <div class="col-lg-5">
+      <div class="card-vg p-4 fade-in">
+        <div class="card-header-vg"><i class="bi bi-plus-circle"></i>Add Candidate</div>
+        <div id="lockedNotice" class="alert alert-warning py-2 small d-none"><i class="bi bi-lock me-1"></i>Candidates cannot be edited while the election is open. Close the election first.</div>
+        <label class="form-label small fw-semibold">Name</label>
+        <input type="text" class="form-control mb-3" id="candName">
+        <label class="form-label small fw-semibold">Position / Department</label>
+        <input type="text" class="form-control mb-3" id="candParty" placeholder="e.g. Board Director — Legal">
+        <button class="btn btn-vg-primary w-100 rounded-3" id="addBtn" onclick="addCandidate()"><i class="bi bi-plus-lg me-1"></i>Add Candidate</button>
+        <div id="alertBox" class="alert d-none mt-3"></div>
+      </div>
+    </div>
+    <div class="col-lg-7">
+      <div class="card-vg p-4 fade-in">
+        <div class="card-header-vg"><i class="bi bi-list-ul"></i>Board Candidates</div>
+        <div id="candidateList" class="d-flex flex-column gap-2"></div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/js/common.js"></script>
+<script>
+requireRoleOrRedirect('election_official');
+renderAppShell('Candidates');
+
+let electionOpen = false;
+
+async function load() {
+  const { election, candidates } = await apiFetch('/voter/candidates');
+  electionOpen = election.status === 'open';
+
+  document.getElementById('lockedNotice').classList.toggle('d-none', !electionOpen);
+  document.getElementById('candName').disabled = electionOpen;
+  document.getElementById('candParty').disabled = electionOpen;
+  document.getElementById('addBtn').disabled = electionOpen;
+
+  document.getElementById('candidateList').innerHTML = candidates.map(c => `
+    <div class="widget-row">
+      <div class="d-flex align-items-center gap-3">
+        <div class="candidate-avatar">${c.name.split(' ').map(w=>w[0]).slice(0,2).join('').toUpperCase()}</div>
+        <div><div class="fw-semibold">${escapeHtml(c.name)}</div><div class="text-muted-sm">${escapeHtml(c.party)}</div></div>
+      </div>
+      <button class="btn btn-sm btn-outline-danger rounded-3" onclick="removeCandidate('${c.id}')" ${electionOpen ? 'disabled' : ''}><i class="bi bi-trash"></i></button>
+    </div>`).join('') || '<p class="text-muted-sm mb-0">No candidates added yet.</p>';
+}
+
+async function addCandidate() {
+  const name = document.getElementById('candName').value.trim();
+  const party = document.getElementById('candParty').value.trim();
+  hideAlert('alertBox');
+  if (!name) { showAlert('alertBox', 'Candidate name is required.', 'error'); return; }
+  try {
+    await apiFetch('/admin/candidates', { method: 'POST', body: JSON.stringify({ name, party }) });
+    document.getElementById('candName').value = '';
+    document.getElementById('candParty').value = '';
+    showAlert('alertBox', 'Candidate added.', 'success');
+    load();
+  } catch (err) { showAlert('alertBox', err.message, 'error'); }
+}
+
+async function removeCandidate(id) {
+  try { await apiFetch(`/admin/candidates/${id}`, { method: 'DELETE' }); load(); }
+  catch (err) { showAlert('alertBox', err.message, 'error'); }
+}
+
+load();
+</script>
+</body>
+</html>
