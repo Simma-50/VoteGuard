@@ -1,7 +1,32 @@
+# Dependencies
 node_modules/
+
+# Environment variables
 .env
-coverage/
-dist/
+.env.*
+
+# Logs
 logs/
 *.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build folders
+dist/
+build/
+
+# Coverage
+coverage/
+
+# OS files
 .DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.swp
